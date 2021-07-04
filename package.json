@@ -1,0 +1,24 @@
+{
+  "name": "yandex.praktikum-web-messenger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "parcel": "^2.0.0-beta.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "./node_modules/.bin/parcel index.html",
+    "build": "./node_modules/.bin/parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MankoIvan/Yandex.Praktikum-Web-Messenger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MankoIvan/Yandex.Praktikum-Web-Messenger/issues"
+  },
+  "homepage": "https://github.com/MankoIvan/Yandex.Praktikum-Web-Messenger#readme"
+}
