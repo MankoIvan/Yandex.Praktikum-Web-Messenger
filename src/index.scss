@@ -1,6 +1,8 @@
 $backgroundColor: #FFF;
 $textColor: #1E1E1E;
 $fontFamily: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+$buttonDefalutColor: #FFF;
+$buttonDefalutHoverColor: #f4f1f1;
 $buttonColor: #3369F3;
 $buttonHoverColor: #1a51db;
 $buttonTextColor: #FFF;
@@ -18,14 +20,14 @@ $buttonTextColor: #FFF;
   margin: 0;
   padding: 0px;
   border: none;
-  background-color: $backgroundColor;
+  background-color: $buttonDefalutColor;
   font-family: $fontFamily;
   font-weight: normal;
   font-size: inherit;
   text-decoration: none;
   cursor: pointer;
 }
-@mixin basicButton {
+@mixin mainButton {
     width: 280px;
     height: 37px;
     background-color: $buttonColor;
@@ -33,6 +35,14 @@ $buttonTextColor: #FFF;
     border-radius: 8px;
     &:hover {
         background-color: $buttonHoverColor;
+    }
+}
+@mixin altButton {
+    height: 37px;
+    padding: 0 8px;
+    border-radius: 8px;
+    &:hover {
+        background-color: $buttonDefalutHoverColor;
     }
 }
 
@@ -73,6 +83,6 @@ body {
     }
     &__button {
         @include resetButton;
-        @include basicButton;
+        @include mainButton;
     }
 }
