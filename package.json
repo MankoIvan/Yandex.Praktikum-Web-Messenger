@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "handlebars": "^4.7.7",
     "parcel": "^2.0.0-beta.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2"
+  },
   "scripts": {
     "dev": "./node_modules/.bin/parcel index.html",
     "build": "./node_modules/.bin/parcel build index.html"
