@@ -1,6 +1,10 @@
-// src/index.js
+import "./index.scss";
 
-import {sum} from './modules/sum';
+import { error } from "./pages/error/error";
 
-const root = document.querySelector('#root');
-root.textContent = sum(6, -1).toString();
+const root = document.querySelector("#root");
+
+
+
+
+root.innerHTML = error({code: "Упс...", message: "Страницы пока нет, но уже скоро она появится"});
