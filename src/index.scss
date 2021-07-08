@@ -6,9 +6,14 @@ $buttonDefalutHoverColor: #f4f1f1;
 $buttonColor: #3369F3;
 $buttonHoverColor: #1a51db;
 $buttonTextColor: #FFF;
+$formBackgroundColor: #FFF;
+$formLableColor: #999;
+$formErrorColor: #FF2F2F;
+$buttonAlertColor: #FF2F2F;
 
 
 @mixin resetParagraph {
+    display: block;
     margin-block-start: 0;
     margin-block-end: 0;
 }
@@ -17,7 +22,7 @@ $buttonTextColor: #FFF;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  margin: 0;
+  margin: 5px;
   padding: 0px;
   border: none;
   background-color: $buttonDefalutColor;
@@ -38,9 +43,12 @@ $buttonTextColor: #FFF;
     }
 }
 @mixin altButton {
+    width: auto;
     height: 37px;
     padding: 0 8px;
     border-radius: 8px;
+    background-color: $buttonDefalutColor;
+    color: $textColor;
     &:hover {
         background-color: $buttonDefalutHoverColor;
     }
@@ -81,8 +89,92 @@ body {
         font-weight: 500;
         margin-bottom: 70px;
     }
-    &__button {
-        @include resetButton;
-        @include mainButton;
+}
+.button {
+    @include resetButton;
+    @include mainButton;
+    &__alt {
+        @extend .button;
+        @include altButton;
+    }
+    &__alert {
+        @extend .button;
+        background-color: $buttonAlertColor;
+    }
+}
+
+.form {
+    box-sizing: border-box;
+    width: 340px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $formBackgroundColor;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    padding: 30px;
+    &__container {
+        width: 100%;
+    }
+    &__title {
+        @include resetParagraph;
+        font-size: 20px;
+        line-height: 20px;
+        font-weight: 500;
+        margin: 20px;
+    }
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__userImg {
+        height: 130px;
+        width: 130px;
+        background-image: url(../static/img/user_pic.jpg);
+        background-size: contain;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;        
+        &-coverText {
+            opacity: .7;
+            text-align: center;
+            display: none;
+        }
+        &:hover &-coverText{
+            display: block;
+        }
+    }
+    &-piece {
+        width: 100%;
+        padding: 8px 0;
+        &__label {
+            @include resetParagraph;
+            color: $formLableColor;
+            font-size: 9px;
+            line-height: 9px;
+            font-weight: 500;
+        }
+        &__input {
+            width: 100%;
+            color: $textColor;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 13px;   
+            border: none;
+            border-bottom: 1px solid $buttonColor;         
+            
+        }
+        &__error {
+            @include resetParagraph;
+            color: $formErrorColor;
+            font-size: 8px;
+            line-height: 8px;
+            font-weight: normal;
+        }
     }
 }

@@ -1,12 +1,24 @@
 import "./index.scss";
 
 import { error } from "./pages/error/error";
+import { authorize } from "./pages/authorize/authorize";
+import { register } from "./pages/register/register";
+import { user } from "./pages/user/user";
 
 const root = document.querySelector("#root");
 
 const path = window.location.pathname;
 
 switch (path) {
+    case '/authorize':
+        root.innerHTML = authorize();
+        break;
+    case '/user':
+        root.innerHTML = user();
+        break;
+    case '/register':
+        root.innerHTML = register();
+        break;
     case '/':
         root.innerHTML = error({code: "Упс...", message: "Страницы пока нет, но уже скоро она появится"});
         break;
