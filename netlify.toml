@@ -8,7 +8,7 @@
   status = 200
   force = true
 [[redirects]]
-  from = "/user
+  from = "/user"
   to = "/"
   status = 200
   force = true
